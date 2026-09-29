@@ -5,9 +5,14 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/gpsInteraccion.unity
+    guid: 603b003759ad63848ad787f98687d4eb
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 2319a3a4cbb523a44a5b4869c60988cf, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: af8a38ff2e2065f45aefe59696012a6f, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 72eb017157923aa45bee90d3eb433063, type: 2}
