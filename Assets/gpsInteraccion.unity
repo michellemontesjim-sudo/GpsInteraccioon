@@ -824,10 +824,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ARGPS
   sessionOrigin: {fileID: 1716118584}
   arTargets:
-  - targetName: 
-    latitude: 0
-    longitude: 0
-    prefab: {fileID: 0}
+  - targetName: queEsLaLluvia
+    latitude: 3.353698
+    longitude: -76.522191
+    prefab: {fileID: 5399844220499812153, guid: 35d93e7691975c14a9924554404ad1cc, type: 3}
+    isDiscovered: 0
+  - targetName: porqueNoLlueve
+    latitude: 3.353795
+    longitude: -76.522152
+    prefab: {fileID: 2498539166535088794, guid: 084eeaf444614e44ba2ba455763cf0f3, type: 3}
     isDiscovered: 0
   distanceText: {fileID: 685467683}
   messageText: {fileID: 360948579}
