@@ -871,7 +871,7 @@ MonoBehaviour:
   - targetName: queEsLaLluvia
     latitude: 3.353698
     longitude: -76.522191
-    prefab: {fileID: 6860570701220294203, guid: dc747cb1a3bffb64887413054d064128, type: 3}
+    prefab: {fileID: 5399844220499812153, guid: 35d93e7691975c14a9924554404ad1cc, type: 3}
     isDiscovered: 0
   - targetName: porqueNoLlueve
     latitude: 3.353795

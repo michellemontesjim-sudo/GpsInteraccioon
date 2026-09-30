@@ -180,7 +180,7 @@ public class ARGPS : MonoBehaviour
         Debug.Log($"Spawn {target.targetName} en {spawnPosition}, cámara en {cam.position}");
 
         Animator anim = instance.GetComponentInChildren<Animator>();
-        if (anim != null) anim.SetTrigger("Appear");
+        //if (anim != null) anim.SetTrigger("Appear");
 
         GameObject test = GameObject.CreatePrimitive(PrimitiveType.Cube);
         test.transform.position = spawnPosition + Vector3.up * 0.25f;
