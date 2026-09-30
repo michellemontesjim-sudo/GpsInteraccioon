@@ -181,6 +181,11 @@ public class ARGPS : MonoBehaviour
 
         Animator anim = instance.GetComponentInChildren<Animator>();
         if (anim != null) anim.SetTrigger("Appear");
+
+        GameObject test = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        test.transform.position = spawnPosition + Vector3.up * 0.25f;
+        test.transform.localScale = Vector3.one * 0.5f;
+        test.GetComponent<Renderer>().material.color = Color.red;
     }
 
     private void OnDisable()
