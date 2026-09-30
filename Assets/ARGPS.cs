@@ -48,11 +48,11 @@ public class ARGPS : MonoBehaviour
         }
 
         // Ocultar todos los prefabs al iniciar
-        foreach (var target in arTargets)
-        {
-            if (target.prefab != null)
-                target.prefab.SetActive(false);
-        }
+        //foreach (var target in arTargets)
+        //{
+         //   if (target.prefab != null)
+        //        target.prefab.SetActive(false);
+        //}
 
         if (messageText != null)
             messageText.text = "Buscando reliquias...";
@@ -159,25 +159,28 @@ public class ARGPS : MonoBehaviour
             messageText.text = $"¡{target.targetName.ToUpper()} ENCONTRADA!";
 
         if (target.prefab == null || sessionOrigin == null)
-            return;
-
-        Vector3 spawnPosition = sessionOrigin.transform.position + sessionOrigin.transform.forward * spawnDistance;
-        spawnPosition.y += yOffset;
-
-        Vector3 forward = sessionOrigin.transform.forward;
-        forward.y = 0f;
-
-        if (forward.sqrMagnitude > 0.001f)
-            target.prefab.transform.rotation = Quaternion.LookRotation(forward);
-
-        target.prefab.transform.position = spawnPosition;
-        target.prefab.SetActive(true);
-
-        Animator anim = target.prefab.GetComponentInChildren<Animator>();
-        if (anim != null)
         {
-            anim.SetTrigger("Appear");
+            Debug.LogError("Prefab o sessionOrigin es null");
+            return;
         }
+
+        Transform cam = sessionOrigin.Camera.transform;
+
+        Vector3 forward = cam.forward;
+        forward.y = 0f;
+        forward.Normalize();
+
+        // 2 m delante de la CÁMARA, a la altura del suelo de la sesión
+        Vector3 spawnPosition = cam.position + forward * spawnDistance;
+        spawnPosition.y = sessionOrigin.transform.position.y + yOffset;
+
+        GameObject instance = Instantiate(target.prefab, spawnPosition, Quaternion.LookRotation(forward));
+        instance.SetActive(true);
+
+        Debug.Log($"Spawn {target.targetName} en {spawnPosition}, cámara en {cam.position}");
+
+        Animator anim = instance.GetComponentInChildren<Animator>();
+        if (anim != null) anim.SetTrigger("Appear");
     }
 
     private void OnDisable()
