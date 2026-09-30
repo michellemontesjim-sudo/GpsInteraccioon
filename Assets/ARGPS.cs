@@ -60,6 +60,8 @@ public class ARGPS : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("ARGPS Start ejecutado");
+        if (messageText != null) messageText.text = "HOLA DESDE EL SCRIPT";
         StartCoroutine(UpdateGPS());
     }
 
