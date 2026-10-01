@@ -8,7 +8,7 @@ using System.Collections;
 [System.Serializable]
 public class ARTarget
 {
-    public string targetName;        // Nombre (ej: "Cofre de Oro", "Estatua Antigua")
+    public string targetName;
     public double latitude;          // Latitud exacta del sitio
     public double longitude;         // Longitud exacta del sitio
     public GameObject prefab;        // El modelo 3D con Tag "ARObject" y Collider
@@ -182,10 +182,26 @@ public class ARGPS : MonoBehaviour
         Animator anim = instance.GetComponentInChildren<Animator>();
         //if (anim != null) anim.SetTrigger("Appear");
 
-        GameObject test = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        /*GameObject test = GameObject.CreatePrimitive(PrimitiveType.Cube);
         test.transform.position = spawnPosition + Vector3.up * 0.25f;
         test.transform.localScale = Vector3.one * 0.5f;
-        test.GetComponent<Renderer>().material.color = Color.red;
+        test.GetComponent<Renderer>().material.color = Color.red;*/
+
+        // 1. Clonar tu prefab real en lugar del cubo
+        GameObject miReliquia = Instantiate(target.prefab);
+
+        // 2. Forzar la posición exacta calculada por el GPS
+        miReliquia.transform.position = spawnPosition;
+
+        // 3. Forzar la rotación para que mire de frente a la cámara
+        miReliquia.transform.rotation = Quaternion.LookRotation(forward);
+
+        // 4. FORZAR LA ESCALA (Crucial en Realidad Aumentada)
+        // Si tu Canvas interno sigue teniendo un ancho de 1920, cambia este 1f por 0.001f
+        miReliquia.transform.localScale = Vector3.one * 1f;
+
+        // 5. Encender el objeto en la escena
+        miReliquia.SetActive(true);
     }
 
     private void OnDisable()

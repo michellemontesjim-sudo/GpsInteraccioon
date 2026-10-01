@@ -871,12 +871,12 @@ MonoBehaviour:
   - targetName: queEsLaLluvia
     latitude: 3.353698
     longitude: -76.522191
-    prefab: {fileID: 5399844220499812153, guid: 35d93e7691975c14a9924554404ad1cc, type: 3}
+    prefab: {fileID: 2832872540738833787, guid: bcb7c9e03a43af64a834b1d6249c0fa7, type: 3}
     isDiscovered: 0
   - targetName: porqueNoLlueve
     latitude: 3.353795
     longitude: -76.522152
-    prefab: {fileID: 2498539166535088794, guid: 084eeaf444614e44ba2ba455763cf0f3, type: 3}
+    prefab: {fileID: 6703653694137348897, guid: fcd7edb813c40a641a529382480de78c, type: 3}
     isDiscovered: 0
   distanceText: {fileID: 685467683}
   messageText: {fileID: 360948579}
