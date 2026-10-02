@@ -878,6 +878,11 @@ MonoBehaviour:
     longitude: -76.521973
     prefab: {fileID: 3318313989204706335, guid: c3a00238f2d69f04eaa028c625a3035e, type: 3}
     isDiscovered: 0
+  - targetName: importancia
+    latitude: 3.353761
+    longitude: -76.52184
+    prefab: {fileID: 8138056645297253437, guid: b46e0e69de2bba6489b4ec90d30d049a, type: 3}
+    isDiscovered: 0
   distanceText: {fileID: 685467683}
   messageText: {fileID: 360948579}
   discoveryDistance: 15
